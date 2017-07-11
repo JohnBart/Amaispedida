@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <item name="background_listview_main" type="color">#FFFFFF</item>
+    <item name="background_activity_main" type="color">#90a4ae</item>
+    <item name="background_linear_Layout" type="color">#455a64</item>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 </resources>
+
+
