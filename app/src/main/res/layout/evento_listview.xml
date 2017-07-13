@@ -6,7 +6,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/primary_dark">
 
         <ImageView
             android:id="@+id/imagem_artista"
@@ -17,7 +18,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="@color/background_linear_Layout"
+            android:background="@color/primary_light"
             android:orientation="vertical">
 
             <LinearLayout
@@ -32,7 +33,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
                     android:text="homer simpson"
-                    android:textColor="#FFFF"
+                    android:textColor="@color/primary_text"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -42,7 +43,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
                     android:text="rock"
-                    android:textColor="#FFFF"
+                    android:textColor="@color/primary_text"
                     android:textSize="12sp"
                     android:textStyle="italic" />
             </LinearLayout>
@@ -58,14 +59,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
                     android:text="Bar do moe"
-                    android:textColor="#FFFF" />
+                    android:textColor="@color/primary_text" />
                 <TextView
                     android:id="@+id/data_hora_show_textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
                     android:text="Sexta 19h"
-                    android:textColor="#FFFF"/>
+                    android:textColor="@color/primary_text"/>
             </LinearLayout>
 
             <Button
