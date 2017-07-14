@@ -32,8 +32,24 @@ CadastroActivity                     ExecutarRepertorioActivity
  3) EspectadorMainActivity
      - Abre uma lista de cards, com os shows cadastrados e demais informações
      - pode vizualizar o repertório do artista, podenso solicitar musicas dentro de uma lista pré cadastrada ou cadastrar uma musica nova.
-  4) 
+  4) MusicoMainActivity
+     - Possuí um menu de opção, onde pode optar por cadastrar um novo show, cadastrar as musicas do repertório e realizar o controle de musicas executadas/pedidas durante um show.
+     
+  5) CadastrarShowActivity
+     - Realiza o cadastro de um novo show, inserindo data, hora e local, alem de poder selecionar dentro da lista de músicas cadastradas do usuário como as do repertório daquele show (via SelecionarRepertorioActivity).
+     
+  6) SelecionarRepertorioActivity
+     - Seleciona dentro da lista de músicas cadastradas do usuário musico como as do repertório daquele show.
+     
+  7) CadastrarMusicaRepertorioActivity
+     - Cadastra dentro de uma lista uma nova música dentro do repertório do artistas (músicas que ele sabe tocar).
+     
+  8) ExecutarRepertorioActivity
+     - Acompanha a execução de um show pré cadastrado, o usuário musico visualiza as musicas cadastrada para tocar naquele show, podendo retirá -las após a execução, nesta tela tambem são exibidas as musicas solicitadas pelo usuário espectador.
+     
+     
 ADAPTERS
+  1) 
 
 
 
