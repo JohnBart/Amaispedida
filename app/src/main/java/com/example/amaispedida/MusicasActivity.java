@@ -15,12 +15,12 @@ public class MusicasActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.lista_musicas);
+        setContentView(R.layout.activity_musicas);
 
         listView = (ListView) findViewById(R.id.listview_musicas);
         adapter = new MusicaListViewAdapter(getApplicationContext());
 
-        for(int i=0; i<10; i++) {
+        for(int i=0; i<40; i++) {
             Musica musica = new Musica();
             musica.setMusica("Like a rolling Stone");
             musica.setCompositor("Bob Dylan");
