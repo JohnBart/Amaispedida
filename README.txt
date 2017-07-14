@@ -49,13 +49,20 @@ CadastroActivity                     ExecutarRepertorioActivity
      
      
 ADAPTERS
-  1) 
+  1) MusicaListViewAdapter
+  2) EventoListViewAdapter
+  
+ Classes de suporte
+ 
+ 1)Evento: cria atributos para implementar a atividade evento. Utilizar Get and set para acessar e alterar as variaveis desta classe.
+ 2)Musica: Iden a 1.
+ 
+ 
+ RES
+ 1) Colors: Contem a definição de cores do app, atentar para o uso correto seguindo padrão Matherial Design.
 
 
 
-
-
-CLASSES DE ATRIBUTOS COM GETTERS E SETTERS
 
 
 
