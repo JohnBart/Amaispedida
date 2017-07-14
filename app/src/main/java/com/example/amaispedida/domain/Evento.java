@@ -1,4 +1,4 @@
-package com.example.amaispedida;
+package com.example.amaispedida.domain;
 
 import android.widget.ImageView;
 import android.widget.ListView;

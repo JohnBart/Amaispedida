@@ -1,4 +1,4 @@
-package com.example.amaispedida;
+package com.example.amaispedida.domain;
 
 /**
  * Created by João Paulo Bart Dias on 12/07/2017.

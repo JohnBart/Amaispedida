@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyTheme">
         <activity
-            android:name=".EspectadorMainActivity"
+            android:name=".interfaces.EspectadorMainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,9 +24,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MusicasActivity"></activity>
+        <activity android:name=".interfaces.MusicasActivity"></activity>
 
-        <activity android:name=".MusicoMainActivity"></activity>
+        <activity android:name=".interfaces.MusicoMainActivity"></activity>
     </application>
 
 </manifest>

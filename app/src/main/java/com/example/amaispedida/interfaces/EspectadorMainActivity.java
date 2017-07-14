@@ -1,8 +1,12 @@
-package com.example.amaispedida;
+package com.example.amaispedida.interfaces;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ListView;
+
+import com.example.amaispedida.R;
+import com.example.amaispedida.adapters.EventoListViewAdapter;
+import com.example.amaispedida.domain.Evento;
 
 public class EspectadorMainActivity extends Activity {
 
