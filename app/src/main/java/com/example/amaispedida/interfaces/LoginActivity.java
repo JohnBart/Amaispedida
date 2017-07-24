@@ -1,6 +1,7 @@
 package com.example.amaispedida.interfaces;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -10,32 +11,46 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.amaispedida.R;
+import com.example.amaispedida.database.DatabaseHelper;
 
 public class LoginActivity extends AppCompatActivity {
+
+    DatabaseHelper helper = new DatabaseHelper(this);
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        Button bt_entrar = (Button) findViewById(R.id.button_login);
-        bt_entrar.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                TextView tLogin = (TextView) findViewById(R.id.login_editText);
-                TextView tPassword = (TextView) findViewById(R.id.password_editText);
-                String login = tLogin.getText().toString();
-                String password = tPassword.getText().toString();
 
-                if(login.equals("espectador")&&password.equals("espectador123")){
-                    alert("Usuário espectador entrou");
-                }else if(login.equals("musico")&&password.equals("musico123")){
-                    alert("Usuário musico entrou");
+    }
+
+    public void click(View v){
+        if(v.getId()==R.id.button_login){
+            TextView tLogin = (TextView) findViewById(R.id.login_editText);
+            TextView tPassword = (TextView) findViewById(R.id.password_editText);
+            String login = tLogin.getText().toString();
+            String password = tPassword.getText().toString();
+            String passAux = helper.searchPass(login);;
+
+            if(password.equals(passAux)){
+                String profileAux = helper.searchProfile(login);
+                Intent intent;
+                if(profileAux.equals("espectador")){
+                   intent = new Intent(this, EspectadorMainActivity.class);
                 }else{
-                    alert("Usuário não cadastrado");
+                   intent = new Intent(this, MusicoMainActivity.class);
                 }
+                intent.putExtra("login", login);
+                startActivity(intent);
+            }else{
+                alert( "Login ou senha não conferem");
             }
-        });
+
+        }else if(v.getId()==R.id.button_signup){
+            Intent i = new Intent(LoginActivity.this, CadastroActivity.class);
+            startActivity(i);
+        }
     }
 
     private void alert(String s){

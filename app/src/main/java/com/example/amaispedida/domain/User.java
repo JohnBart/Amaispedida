@@ -5,17 +5,17 @@ package com.example.amaispedida.domain;
  */
 
 public class User {
-    private int id;
+    private String name;
     private String login;
     private String password;
     private String profile;
 
-    public int getId() {
-        return id;
+    public String getName() {
+        return name;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getLogin() {

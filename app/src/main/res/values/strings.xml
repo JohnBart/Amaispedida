@@ -1,17 +1,21 @@
 <resources>
-    <string name="app_name">A mais pedida</string>
+ <string name="app_name">A mais pedida</string>
 
-    <!-- Strings related to login -->
-   <string name="login">Login </string>
-    <string name="login_input">Login ou email</string>
-    <string name="password">Senha</string>
-    <string name="password_input">Digite aqui</string>
-    <string name="signin_button">Entrar ou cadastrar</string>
-    <string name="re_password">Repetir senha</string>
-    <string name="selecionar_perfil">Escolha um perfil de usuário</string>
-    <string name="espectador">Espectador</string>
-    <string name="musico">Musico</string>
-    <string name="cadastroButton">Cadastrar</string>
-    <string name="repertorio">Ver Repertório</string>
-    <string name="title_activity_login">Entrar</string>
+ <!-- Strings related to login -->
+ <string name="login">Login </string>
+ <string name="login_input">Login ou email</string>
+ <string name="password">Senha</string>
+ <string name="password_input">Digite aqui</string>
+ <string name="signin_button">Entrar</string>
+ <string name="signup">Cadastrar</string>
+ <string name="re_password">Repetir senha</string>
+ <string name="selecionar_perfil">Escolha um perfil de usuário</string>
+ <string name="espectador">Espectador</string>
+ <string name="musico">Musico</string>
+ <string name="cadastroButton">Cadastrar</string>
+ <string name="repertorio">Ver Repertório</string>
+ <string name="title_activity_login">Entrar</string>
+
+ <!--Strings related cadastro activity-->
+ <string name="name">Nome</string>
 </resources>

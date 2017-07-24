@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp">
 
     <ImageView
         android:id="@+id/logo_imageview"
@@ -24,8 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Digite aqui" />
+        android:inputType="textPersonName" />
 
     <TextView
         android:layout_width="match_parent"
@@ -39,13 +39,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPassword"
-        android:hint=""/>
+        android:inputType="textPassword" />
 
-    <Button
-        android:id="@+id/button_login"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/signin_button" />
+        android:orientation="horizontal"
+        android:gravity="center">
+    <Button
+        android:id="@+id/button_login"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="@string/signin_button"
+        android:onClick="click"/>
+
+    <Button
+        android:id="@+id/button_signup"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="@string/signup"
+        android:onClick="click"/>
+
+    </LinearLayout>
 
 </LinearLayout>

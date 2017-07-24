@@ -2,8 +2,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp">
 
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/name" />
+
+    <EditText
+        android:id="@+id/name_input_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName" />
 
     <TextView
         android:layout_width="match_parent"
@@ -11,7 +23,7 @@
         android:text="@string/login" />
 
     <EditText
-        android:id="@+id/login_input_textview"
+        android:id="@+id/login_input_edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"/>
@@ -22,7 +34,7 @@
         android:text="@string/password" />
 
     <EditText
-        android:id="@+id/password_input_textview1"
+        android:id="@+id/password_input_edittext1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -34,7 +46,7 @@
         android:text="@string/re_password" />
 
     <EditText
-        android:id="@+id/password_input_textview2"
+        android:id="@+id/password_input_edittext2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"/>
@@ -46,6 +58,7 @@
         android:text="@string/selecionar_perfil" />
 
     <RadioGroup
+        android:id="@+id/profile_radiogroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -65,10 +78,11 @@
     </RadioGroup>
 
     <Button
-        android:id="@+id/cadastro_button"
-        android:layout_width="wrap_content"
+        android:id="@+id/signup_button"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/cadastroButton" />
+        android:text="@string/cadastroButton"
+        android:onClick="onSignUpClick"/>
 
 </LinearLayout>

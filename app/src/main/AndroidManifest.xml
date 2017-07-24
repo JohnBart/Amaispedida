@@ -25,7 +25,8 @@
         </activity>
         <activity android:name=".interfaces.MusicasActivity" />
         <activity android:name=".interfaces.MusicoMainActivity" />
-        <activity android:name=".interfaces.EspectadorMainActivity"></activity>
+        <activity android:name=".interfaces.EspectadorMainActivity"/>
+        <activity android:name=".interfaces.CadastroActivity"/>
     </application>
 
 </manifest>
