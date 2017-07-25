@@ -16,45 +16,55 @@ import com.example.amaispedida.database.DatabaseHelper;
 public class LoginActivity extends AppCompatActivity {
 
     DatabaseHelper helper = new DatabaseHelper(this);
+    Button bt_login;
+    Button bt_signup;
 
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-    }
 
-    public void click(View v){
-        if(v.getId()==R.id.button_login){
-            TextView tLogin = (TextView) findViewById(R.id.login_editText);
-            TextView tPassword = (TextView) findViewById(R.id.password_editText);
-            String login = tLogin.getText().toString();
-            String password = tPassword.getText().toString();
-            String passAux = helper.searchPass(login);;
+        bt_login = (Button)findViewById(R.id.button_login);
+        bt_login.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            TextView tLogin = (TextView) findViewById(R.id.login_editText);
+                                            TextView tPassword = (TextView) findViewById(R.id.password_editText);
+                                            String login = tLogin.getText().toString();
+                                            String password = tPassword.getText().toString();
+                                            String passAux = helper.searchPass(login);
 
-            if(password.equals(passAux)){
-                String profileAux = helper.searchProfile(login);
-                Intent intent;
-                if(profileAux.equals("espectador")){
-                   intent = new Intent(this, EspectadorMainActivity.class);
-                }else{
-                   intent = new Intent(this, MusicoMainActivity.class);
-                }
-                intent.putExtra("login", login);
-                startActivity(intent);
-            }else{
-                alert( "Login ou senha não conferem");
+                                            if (password.equals(passAux)) {
+                                                String profileAux = helper.searchProfile(login);
+                                                Intent intent;
+                                                if (profileAux.equals("espectador")) {
+                                                    intent = new Intent(LoginActivity.this, EspectadorMainActivity.class);
+                                                } else {
+                                                    intent = new Intent(LoginActivity.this, MusicoMainActivity.class);
+                                                }
+                                                intent.putExtra("login", login);
+                                                startActivity(intent);
+                                            } else {
+                                                alert("Login ou senha não conferem");
+                                            }
+                                        }
+                                    }
+        );
+        bt_signup = (Button) findViewById(R.id.button_signup);
+        bt_signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(LoginActivity.this, CadastroActivity.class);
+                startActivity(i);
             }
-
-        }else if(v.getId()==R.id.button_signup){
-            Intent i = new Intent(LoginActivity.this, CadastroActivity.class);
-            startActivity(i);
-        }
+        });
     }
 
-    private void alert(String s){
-        Toast.makeText(this, s , Toast.LENGTH_LONG).show();
+
+    private void alert(String s) {
+        Toast.makeText(this, s, Toast.LENGTH_LONG).show();
     }
 
 }

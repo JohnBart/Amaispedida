@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import com.example.amaispedida.R;
 import com.example.amaispedida.domain.Evento;
-import com.example.amaispedida.domain.Musica;
 
 import java.util.List;
 
@@ -31,7 +30,7 @@ public class EventoRecyclerViewAdapter extends RecyclerView.Adapter<EventoRecycl
 
 
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.evento_listview, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.evento_cardview, parent, false);
         return new ViewHolder(v);
     }
 

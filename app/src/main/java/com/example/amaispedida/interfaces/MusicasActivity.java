@@ -1,14 +1,11 @@
 package com.example.amaispedida.interfaces;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.ListView;
 
 import com.example.amaispedida.R;
-import com.example.amaispedida.adapters.MusicaListViewAdapter;
 import com.example.amaispedida.adapters.MusicaRecyclerViewAdapter;
 import com.example.amaispedida.domain.Musica;
 

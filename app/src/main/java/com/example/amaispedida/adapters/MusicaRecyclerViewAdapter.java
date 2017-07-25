@@ -1,5 +1,4 @@
 package com.example.amaispedida.adapters;
-import android.app.LauncherActivity;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -28,7 +27,7 @@ public class MusicaRecyclerViewAdapter extends RecyclerView.Adapter<MusicaRecycl
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.musica_listview, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.musica_cardview, parent, false);
         return new ViewHolder(v);
     }
 
