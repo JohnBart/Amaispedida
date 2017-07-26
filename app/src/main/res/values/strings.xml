@@ -1,18 +1,24 @@
 <resources>
-    <string name="app_name">A mais pedida</string>
+ <string name="app_name">A mais pedida</string>
 
-    <!-- Strings related to login -->
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password (optional)</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="error_invalid_email">This email address is invalid</string>
-    <string name="error_invalid_password">This password is too short</string>
-    <string name="error_incorrect_password">This password is incorrect</string>
-    <string name="error_field_required">This field is required</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email
-        completions."
-    </string>
+ <!-- Strings related to login -->
+ <string name="login">Login </string>
+ <string name="login_input">Login ou email</string>
+ <string name="password">Senha</string>
+ <string name="password_input">Digite aqui</string>
+ <string name="signin_button">Entrar</string>
+ <string name="signup">Cadastrar</string>
+ <string name="re_password">Repetir senha</string>
+ <string name="selecionar_perfil">Escolha um perfil de usuário</string>
+ <string name="espectador">Espectador</string>
+ <string name="musico">Musico</string>
+ <string name="cadastroButton">Cadastrar</string>
+ <string name="repertorio">Ver Repertório</string>
+ <string name="title_activity_login">Entrar</string>
 
-    <string name="repertorio">Ver Repertório</string>
+ <!--Strings related cadastro activity-->
+ <string name="name">Nome</string>
+
+ <!--Strings related MusicoMainActivity-->
+ <string name="events_registered">Eventos Cadastrados</string>
 </resources>

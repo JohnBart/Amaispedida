@@ -2,36 +2,47 @@ package com.example.amaispedida.interfaces;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.widget.ListView;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.widget.ImageView;
 
 import com.example.amaispedida.R;
-import com.example.amaispedida.adapters.EventoListViewAdapter;
+import com.example.amaispedida.adapters.EventoRecyclerViewAdapter;
 import com.example.amaispedida.domain.Evento;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class EspectadorMainActivity extends Activity {
 
-    private ListView listView;
-    private EventoListViewAdapter adapter;
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter adapter;
+    private List<Evento> mList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_espectador_main);
 
-        listView = (ListView) findViewById(R.id.listview_evento);
-        adapter = new EventoListViewAdapter(getApplicationContext());
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerView_evento);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        for(int i=0; i<10; i++) {
-            Evento evento = new Evento();
-            evento.setNomeArtista("Homer Simpson");
-            evento.setGeneroMusical("Rock");
-            evento.setImagemArtista(R.drawable.homer_rock);
-            evento.setLocalShow("Bar do Moe");
-            evento.setDataHoraShow("22 julho/19:00");
+        mList = new ArrayList<>();
 
-            adapter.addItem(evento);
-        }
-        listView.setAdapter(adapter);
+        Evento evento;
+
+        evento = new Evento(R.drawable.homer_rock, "The Simpsons", "Rock", "Bar do More", "22 Jun 21:00");
+        mList.add(evento);
+
+        evento = new Evento(R.drawable.guns, "Guns n Roses", "Hard Rock", "Maracanã", "19 Ago 20:00");
+        mList.add(evento);
+
+        evento = new Evento(R.drawable.acdc, "AC/DC", "Hard Rock", "Allianz Parque", "7 Set 22:00");
+        mList.add(evento);
+
+        adapter = new EventoRecyclerViewAdapter(mList, this);
+        recyclerView.setAdapter(adapter);
     }
 
 }
