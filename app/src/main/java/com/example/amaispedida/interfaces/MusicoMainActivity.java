@@ -27,7 +27,7 @@ public class MusicoMainActivity extends AppCompatActivity {
             }
         });
 
-        bt_consultar_musicas = (Button) findViewById(R.id.bt_musicas_cadastradas);
+        bt_consultar_musicas = (Button) findViewById(R.id.bt_consultar_musicas);
         bt_consultar_musicas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
