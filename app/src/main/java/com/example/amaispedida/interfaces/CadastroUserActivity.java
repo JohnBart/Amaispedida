@@ -1,8 +1,6 @@
 package com.example.amaispedida.interfaces;
 
 import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
@@ -17,14 +15,14 @@ import com.example.amaispedida.domain.User;
  * Created by João Paulo Bart Dias on 20/07/2017.
  */
 
-public class CadastroActivity extends AppCompatActivity {
+public class CadastroUserActivity extends AppCompatActivity {
 
     DatabaseHelper helper = new DatabaseHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.cadastro_activity);
+        setContentView(R.layout.activity_cadastro_user);
     }
 
     public void onSignUpClick(View v){

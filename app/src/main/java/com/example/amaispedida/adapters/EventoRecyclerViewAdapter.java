@@ -41,7 +41,8 @@ public class EventoRecyclerViewAdapter extends RecyclerView.Adapter<EventoRecycl
         holder.nomeArtista.setText(evento.getNomeArtista()) ;
         holder.generoMusical.setText(evento.getGeneroMusical());
         holder.localShow.setText(evento.getLocalShow());
-        holder.dataShow.setText(evento.getDataHoraShow());
+        holder.dataShow.setText(evento.getData());
+        holder.horaShow.setText(evento.getHora());
 
     }
 
@@ -56,6 +57,7 @@ public class EventoRecyclerViewAdapter extends RecyclerView.Adapter<EventoRecycl
         public TextView generoMusical;
         public TextView localShow;
         public TextView dataShow;
+        public TextView horaShow;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -63,7 +65,8 @@ public class EventoRecyclerViewAdapter extends RecyclerView.Adapter<EventoRecycl
             nomeArtista = (TextView) itemView.findViewById(R.id.nome_artista_textView);
             generoMusical = (TextView) itemView.findViewById(R.id.genero_musical_textView);
             localShow = (TextView) itemView.findViewById(R.id.local_show_textView);
-            dataShow = (TextView) itemView.findViewById(R.id.data_hora_show_textView);
+            dataShow = (TextView) itemView.findViewById(R.id.data_show_textView);
+            horaShow = (TextView) itemView.findViewById(R.id.hora_show_textView);
         }
     }
 }

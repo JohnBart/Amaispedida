@@ -3,7 +3,6 @@ package com.example.amaispedida.interfaces;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +15,12 @@ import com.example.amaispedida.database.DatabaseHelper;
 public class LoginActivity extends AppCompatActivity {
 
     DatabaseHelper helper = new DatabaseHelper(this);
+    private TextView tName;
+    private TextView tLogin;
+    private TextView tPassword;
+    private String name;
+    private String login;
+    private String password;
     Button bt_login;
     Button bt_signup;
 
@@ -44,7 +49,6 @@ public class LoginActivity extends AppCompatActivity {
                                                 } else {
                                                     intent = new Intent(LoginActivity.this, MusicoMainActivity.class);
                                                 }
-                                                intent.putExtra("login", login);
                                                 startActivity(intent);
                                             } else {
                                                 alert("Login ou senha não conferem");
@@ -56,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
         bt_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(LoginActivity.this, CadastroActivity.class);
+                Intent i = new Intent(LoginActivity.this, CadastroUserActivity.class);
                 startActivity(i);
             }
         });

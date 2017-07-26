@@ -10,8 +10,18 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@color/primary_dark">
+        android:background="@color/primary_dark"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/nome_evento_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primary_light"
+            android:gravity="center"
+            android:text="Show de rock"
+            android:textSize="@dimen/titleText"
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/imagem_artista"
@@ -64,13 +74,22 @@
                     android:layout_marginLeft="16dp"
                     android:text="Bar do moe"
                     android:textColor="@color/primary_text" />
+
                 <TextView
-                    android:id="@+id/data_hora_show_textView"
+                    android:id="@+id/data_show_textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
-                    android:text="Sexta 19h"
-                    android:textColor="@color/primary_text"/>
+                    android:text="Sexta, 22 agosto"
+                    android:textColor="@color/primary_text" />
+
+                <TextView
+                    android:id="@+id/hora_show_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:text="19:00"
+                    android:textColor="@color/primary_text" />
             </LinearLayout>
 
             <Button
