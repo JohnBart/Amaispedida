@@ -1,5 +1,6 @@
 package com.example.amaispedida.interfaces;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -52,7 +53,6 @@ public class CadastroEventoActivity extends AppCompatActivity {
                         datast.isEmpty()||horast.isEmpty()) {
                     alert("Campo em branco, favor preencher todo o formulário");
                 } else {
-
                     Evento evento = new Evento();
                     evento.setNomeEvento(nome_eventost);
                     evento.setNomeArtista(nome_artistast);
@@ -60,6 +60,9 @@ public class CadastroEventoActivity extends AppCompatActivity {
                     evento.setLocalShow(localst);
                     evento.setData(datast);
                     evento.setHora(horast);
+
+
+
                     database.insertEvento(evento, 1);
                     alert("Evento Salvo");
                 }

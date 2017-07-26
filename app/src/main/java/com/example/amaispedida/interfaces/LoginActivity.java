@@ -14,7 +14,7 @@ import com.example.amaispedida.database.DatabaseHelper;
 
 public class LoginActivity extends AppCompatActivity {
 
-    DatabaseHelper helper = new DatabaseHelper(this);
+    DatabaseHelper database = new DatabaseHelper(this);
     private TextView tName;
     private TextView tLogin;
     private TextView tPassword;
@@ -39,16 +39,18 @@ public class LoginActivity extends AppCompatActivity {
                                             TextView tPassword = (TextView) findViewById(R.id.password_editText);
                                             String login = tLogin.getText().toString();
                                             String password = tPassword.getText().toString();
-                                            String passAux = helper.searchPass(login);
+                                            String passAux = database.searchPass(login);
 
                                             if (password.equals(passAux)) {
-                                                String profileAux = helper.searchProfile(login);
+                                                String profileAux = database.searchProfile(login);
+                                                long id = database.returnIdUser(login);
                                                 Intent intent;
                                                 if (profileAux.equals("espectador")) {
                                                     intent = new Intent(LoginActivity.this, EspectadorMainActivity.class);
                                                 } else {
                                                     intent = new Intent(LoginActivity.this, MusicoMainActivity.class);
                                                 }
+                                                intent.putExtra("id", id);
                                                 startActivity(intent);
                                             } else {
                                                 alert("Login ou senha não conferem");

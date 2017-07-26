@@ -71,6 +71,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return b;
     }
 
+    public long returnIdUser(String login){
+        db = this.getReadableDatabase();
+        Cursor cursor;
+        cursor = db.rawQuery("select login, _id from users", null);
+        String a;
+        long b = 0;
+        if(cursor.moveToFirst()){
+            do{
+                a = cursor.getString(0);
+                if(a.equals(login)){
+                    b = cursor.getLong(1);
+                    break;
+                }
+
+            }while(cursor.moveToNext());
+        }
+        db.close();
+        return b;
+    }
+
     public void insertUser(User s){
         db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -132,6 +152,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         db.close();
         return b;
+    }
+
+    public int countLinesFromTable(String table){
+        db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("select * from "+table, null);
+        int i = cursor.getCount();
+        return i;
     }
 
 }
