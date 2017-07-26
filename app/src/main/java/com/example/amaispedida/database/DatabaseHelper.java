@@ -51,6 +51,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         this.onCreate(db);
     }
 
+    public Boolean isLoginInDatabase(String login){
+        db = this.getReadableDatabase();
+        Cursor cursor;
+        cursor = db.rawQuery("select login from users", null);
+        String a;
+        Boolean b = false;
+        if(cursor.moveToFirst()){
+            do{
+                a = cursor.getString(0);
+                if(a.equals(login)){
+                    b = true;
+                    break;
+                }
+
+            }while(cursor.moveToNext());
+        }
+        db.close();
+        return b;
+    }
+
     public void insertUser(User s){
         db = this.getWritableDatabase();
         ContentValues values = new ContentValues();

@@ -6,8 +6,11 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.amaispedida.R;
+import com.example.amaispedida.database.DatabaseHelper;
 
 public class CadastroEventoActivity extends AppCompatActivity {
+
+    DatabaseHelper databaseHelper = new DatabaseHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
