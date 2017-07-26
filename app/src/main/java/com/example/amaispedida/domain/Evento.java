@@ -9,18 +9,33 @@ import android.widget.ListView;
 
 public class Evento {
     private Integer imagemArtista;
+    private String nomeEvento;
     private String nomeArtista;
     private String generoMusical;
     private String localShow;
-    private String dataHoraShow;
+    private String data;
+    private String hora;
 
-    public Evento(){ }
+    public Evento() {
+    }
 
-    public Evento(Integer imagemArtista, String nomeArtista, String generoMusical, String localShow, String dataHoraShow){
+    public Evento(Integer imagemArtista, String nomeEvento, String nomeArtista, String generoMusical, String localShow, String data, String hora) {
+        this.nomeEvento = nomeEvento;
         this.imagemArtista = imagemArtista;
         this.nomeArtista = nomeArtista;
         this.generoMusical = generoMusical;
-        this.dataHoraShow = dataHoraShow;
+        this.localShow = localShow;
+        this.data = data;
+        this.hora = hora;
+    }
+
+
+    public String getNomeEvento() {
+        return nomeEvento;
+    }
+
+    public void setNomeEvento(String nomeEvento) {
+        this.nomeEvento = nomeEvento;
     }
 
     public Integer getImagemArtista() {
@@ -55,11 +70,19 @@ public class Evento {
         this.localShow = localShow;
     }
 
-    public String getDataHoraShow() {
-        return dataHoraShow;
+    public String getData() {
+        return data;
     }
 
-    public void setDataHoraShow(String dataHoraShow) {
-        this.dataHoraShow = dataHoraShow;
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    public String getHora() {
+        return hora;
+    }
+
+    public void setHora(String hora) {
+        this.hora = hora;
     }
 }

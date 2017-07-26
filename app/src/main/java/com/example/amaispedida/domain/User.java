@@ -5,10 +5,21 @@ package com.example.amaispedida.domain;
  */
 
 public class User {
+    private long id;
     private String name;
     private String login;
     private String password;
     private String profile;
+
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
 
     public String getName() {
         return name;

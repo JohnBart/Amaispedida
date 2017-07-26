@@ -32,13 +32,13 @@ public class EspectadorMainActivity extends Activity {
 
         Evento evento;
 
-        evento = new Evento(R.drawable.homer_rock, "The Simpsons", "Rock", "Bar do More", "22 Jun 21:00");
+        evento = new Evento(R.drawable.homer_rock, "Show de Rock", "The Simpsons", "Rock", "Bar do More", "Sexta, 22 Junho", "21:00");
         mList.add(evento);
 
-        evento = new Evento(R.drawable.guns, "Guns n Roses", "Hard Rock", "Maracanã", "19 Ago 20:00");
+        evento = new Evento(R.drawable.guns, "Rock in Rio", "Guns n Roses", "Hard Rock", "Maracanã", "Quarta, 19 Ago", "20:00");
         mList.add(evento);
 
-        evento = new Evento(R.drawable.acdc, "AC/DC", "Hard Rock", "Allianz Parque", "7 Set 22:00");
+        evento = new Evento(R.drawable.acdc, "Monsters of Rock", "AC/DC", "Hard Rock", "Allianz Parque", "Domingo, 7 Set", "22:00");
         mList.add(evento);
 
         adapter = new EventoRecyclerViewAdapter(mList, this);
