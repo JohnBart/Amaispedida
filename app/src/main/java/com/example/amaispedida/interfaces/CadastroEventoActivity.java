@@ -9,10 +9,11 @@ import android.widget.Toast;
 
 import com.example.amaispedida.R;
 import com.example.amaispedida.database.DatabaseHelper;
+import com.example.amaispedida.domain.Evento;
 
 public class CadastroEventoActivity extends AppCompatActivity {
 
-    DatabaseHelper databaseHelper = new DatabaseHelper(this);
+    DatabaseHelper database = new DatabaseHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,37 +35,36 @@ public class CadastroEventoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 EditText nome_evento = (EditText) findViewById(R.id.et_nome_evento_cadastro);
+                EditText nome_artista = (EditText) findViewById(R.id.et_nome_artista_cadastro);
+                EditText genero_musical = (EditText) findViewById(R.id.et_genero_cadastro);
                 EditText local = (EditText) findViewById(R.id.et_local_evento_cadastro);
                 EditText data = (EditText) findViewById(R.id.et_data_evento_cadastro);
                 EditText hora = (EditText) findViewById(R.id.et_hora_evento_cadastro);
 
                 String nome_eventost = nome_evento.getText().toString();
+                String nome_artistast = nome_artista.getText().toString();
+                String genero_musicalst = genero_musical.getText().toString();
                 String localst = local.getText().toString();
                 String datast = data.getText().toString();
                 String horast = hora.getText().toString();
 
-                if(nome_eventost.isEmpty()||localst.isEmpty()||datast.isEmpty()||horast.isEmpty()) {
+                if(nome_eventost.isEmpty()||nome_artistast.isEmpty()||genero_musicalst.isEmpty()||localst.isEmpty()||
+                        datast.isEmpty()||horast.isEmpty()) {
                     alert("Campo em branco, favor preencher todo o formulário");
+                } else {
+
+                    Evento evento = new Evento();
+                    evento.setNomeEvento(nome_eventost);
+                    evento.setNomeArtista(nome_artistast);
+                    evento.setGeneroMusical(genero_musicalst);
+                    evento.setLocalShow(localst);
+                    evento.setData(datast);
+                    evento.setHora(horast);
+                    database.insertEvento(evento, 1);
+                    alert("Evento Salvo");
                 }
 
 
-
-            }
-        });
-
-        Button bt_editarEvento = (Button) findViewById(R.id.bt_editar_evento_cadastro);
-        bt_editarEvento.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-
-        Button bt_cancelarEvento = (Button) findViewById(R.id.bt_cancelar_evento_cadastro);
-        bt_cancelarEvento.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
             }
         });
