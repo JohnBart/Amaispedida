@@ -10,11 +10,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.amaispedida.R;
+import com.example.amaispedida.database.DBController;
 import com.example.amaispedida.database.DatabaseHelper;
 
 public class LoginActivity extends AppCompatActivity {
 
-    DatabaseHelper database = new DatabaseHelper(this);
+    //DatabaseHelper database = new DatabaseHelper(this);
     private TextView tName;
     private TextView tLogin;
     private TextView tPassword;
@@ -23,6 +24,7 @@ public class LoginActivity extends AppCompatActivity {
     private String password;
     Button bt_login;
     Button bt_signup;
+    DBController database;
 
 
     @Override
@@ -30,33 +32,34 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        database = new DBController(this);
 
         bt_login = (Button)findViewById(R.id.button_login);
         bt_login.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {
-                                            TextView tLogin = (TextView) findViewById(R.id.login_editText);
-                                            TextView tPassword = (TextView) findViewById(R.id.password_editText);
-                                            String login = tLogin.getText().toString();
-                                            String password = tPassword.getText().toString();
-                                            String passAux = database.searchPass(login);
+            TextView tLogin = (TextView) findViewById(R.id.login_editText);
+            TextView tPassword = (TextView) findViewById(R.id.password_editText);
+            String login = tLogin.getText().toString();
+            String password = tPassword.getText().toString();
+            String passAux = database.searchPass(login);
 
-                                            if (password.equals(passAux)) {
-                                                String profileAux = database.searchProfile(login);
-                                                long id = database.returnIdUser(login);
-                                                Intent intent;
-                                                if (profileAux.equals("espectador")) {
-                                                    intent = new Intent(LoginActivity.this, EspectadorMainActivity.class);
-                                                } else {
-                                                    intent = new Intent(LoginActivity.this, MusicoMainActivity.class);
-                                                }
-                                                intent.putExtra("id", id);
-                                                startActivity(intent);
-                                            } else {
-                                                alert("Login ou senha não conferem");
-                                            }
-                                        }
-                                    }
+            if (password.equals(passAux)) {
+                String profileAux = database.searchProfile(login);
+                long id = database.returnIdUser(login);
+                Intent intent;
+                if (profileAux.equals("espectador")) {
+                    intent = new Intent(LoginActivity.this, EspectadorMainActivity.class);
+                } else {
+                    intent = new Intent(LoginActivity.this, MusicoMainActivity.class);
+                }
+                intent.putExtra("id", id);
+                startActivity(intent);
+            } else {
+                alert("Login ou senha não conferem");
+        }
+    }
+}
         );
         bt_signup = (Button) findViewById(R.id.button_signup);
         bt_signup.setOnClickListener(new View.OnClickListener() {
