@@ -62,7 +62,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-    /*public void insertEvento(Evento e, long id_artista){
+    public void insertEvento(Evento e, long id_artista){
         db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("name_event", e.getNomeEvento());
@@ -73,7 +73,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put("hour", e.getHora());
         db.insert("events", null, values);
         db.close();
-    }*/
+    }
 
 
     public String searchPass(String login){

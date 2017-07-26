@@ -50,22 +50,28 @@ public class CadastroUserActivity extends AppCompatActivity {
             }
 
 
+            if(namest.isEmpty()||loginst.isEmpty()||password1st.isEmpty()||password2st.isEmpty()){
+                Toast.makeText(this, "Campo em branco, favor preencher todo o formulário", Toast.LENGTH_SHORT).show();
+            }else {
+                if (!password1st.equals(password2st)) {
+                    alert("Senhas diferentes");
+                } else {
+                    User user = new User();
+                    user.setName(namest);
+                    user.setLogin(loginst);
+                    user.setPassword(password1st);
+                    user.setProfile(profilest);
 
-            if(!password1st.equals(password2st)){
-                Toast.makeText(this, "Senhas diferentes", Toast.LENGTH_LONG).show();
-            }else{
-                User user = new User();
-                user.setName(namest);
-                user.setLogin(loginst);
-                user.setPassword(password1st);
-                user.setProfile(profilest);
-
-                helper.insertUser(user);
-                Toast.makeText(this, "Usuário cadastrado", Toast.LENGTH_SHORT).show();
+                    helper.insertUser(user);
+                    alert("Usuário cadastrado");
+                }
             }
 
 
-
         }
+    }
+
+    public void alert(String str){
+        Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
     }
 }
