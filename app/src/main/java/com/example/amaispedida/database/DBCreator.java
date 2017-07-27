@@ -21,14 +21,14 @@ class DBCreator extends SQLiteOpenHelper {
 
     private static final String TABLE_CREATE_EVENTS = "create table if not exists "+EVENTS_TABLE+"(" +
             "_id_event integer primary key autoincrement, "+
-            "name_event text not null, id_artist text foreign key not null, " +
+            "name_event text not null, id_artist integer, " +
             "name_artist text not null, music_style text not null," +
             " date text not null, hour text not null);";
 
     private static final String TABLE_CREATE_MUSICS = "create table if not exists "+SONGS_TABLE+"(" +
             "_id_music integer primary key autoincrement, "+
             "song text not null, composer text not null, " +
-            "id_artist text foreign key not null);";
+            "id_artist integer);";
     //composer é o que compôs a musica, id_artist é o artista que cadastrou a musica no seu repertório
 
     DBCreator(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {

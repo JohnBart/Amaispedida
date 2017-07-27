@@ -46,6 +46,10 @@ public class MusicoMainActivity extends AppCompatActivity {
         bt_cadastrar_musica.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent i = new Intent(MusicoMainActivity.this, CadastroMusicaActivity.class);
+                i.putExtra("id",user.getId() );
+                i.putExtra("name", user.getName());
+                startActivity(i);
 
             }
         });
@@ -54,6 +58,11 @@ public class MusicoMainActivity extends AppCompatActivity {
         bt_consultar_musicas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent i = new Intent(MusicoMainActivity.this, MusicasActivity.class);
+                i.putExtra("id",user.getId() );
+                i.putExtra("name", user.getName());
+                startActivity(i);
+
 
             }
         });

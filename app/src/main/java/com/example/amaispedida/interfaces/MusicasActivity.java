@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.example.amaispedida.R;
 import com.example.amaispedida.adapters.MusicaRecyclerViewAdapter;
+import com.example.amaispedida.database.DBController;
 import com.example.amaispedida.domain.Musica;
 
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ import java.util.List;
  */
 
 public class MusicasActivity extends AppCompatActivity {
+    DBController database;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private List<Musica> mList;
@@ -26,21 +28,25 @@ public class MusicasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_musicas);
 
+        database = new DBController(this);
+
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView_musicas);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        mList = new ArrayList<>();
+        mList = database.returnMusicsFromArtist(1);
 
 
-        String[] musicas = new String[]{"Like a Rolling Stone", "Welcome To The Jungle", "Angie", "Bad Love", "Heartbreak", "Foxy Lady", "Time Stand Still", "Hole in My Soul", "Zombie", "Like a Hurricane", "Love of my life", "Hey hey my my", "TNT", "We Can Work It Out", "Band on the run", "Shine on you crazy diamond"};
+
+
+        /*String[] musicas = new String[]{"Like a Rolling Stone", "Welcome To The Jungle", "Angie", "Bad Love", "Heartbreak", "Foxy Lady", "Time Stand Still", "Hole in My Soul", "Zombie", "Like a Hurricane", "Love of my life", "Hey hey my my", "TNT", "We Can Work It Out", "Band on the run", "Shine on you crazy diamond"};
         String[] artistas = new String[]{"Bob Dylan", "Guns'n Roses", "Rolling Stones", "Eric Clapton", "Led Zeppelin", "Jimi Hendrix", "Rush", "Aerosmith", "Cramberries", "Scorpions", "Queen", "Neil Young", "AC/DC", "Beatles", "Paul McCartney", "Pink Floyd"};
 
         for (int i = 0; i < 40; i++) {
             Musica m = new Musica(musicas[i % musicas.length], artistas[i % artistas.length]);
             mList.add(m);
         }
-
+*/
         adapter = new MusicaRecyclerViewAdapter(mList, this);
         recyclerView.setAdapter(adapter);
 
