@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_margin="16dp"
     tools:context="com.example.amaispedida.interfaces.CadastroEventoActivity">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,7 +21,6 @@
             android:id="@+id/iv_evento_cadastro"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:layout_margin="16dp"
             android:background="@color/colorPrimaryDark"
             android:src="@drawable/acdc" />
 
@@ -24,7 +29,6 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:paddingBottom="16dp"
             android:text="Inserir imagem" />
 
 
@@ -39,18 +43,15 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="Nome do evento"
-            android:paddingLeft="16dp"
-            android:paddingBottom="16dp"
+            android:layout_marginTop="8dp"
             android:textAlignment="textEnd"/>
 
         <EditText
             android:id="@+id/et_nome_evento_cadastro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:capitalize="sentences"
             android:inputType="textPersonName"
-            android:paddingBottom="16dp"
-            android:paddingRight="16dp" />
+            android:layout_marginTop="8dp" />
 
     </LinearLayout>
 
@@ -63,18 +64,15 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="Artista ou banda"
-            android:paddingLeft="16dp"
-            android:paddingBottom="16dp"
+            android:layout_marginTop="8dp"
             android:textAlignment="textEnd"/>
 
         <EditText
             android:id="@+id/et_nome_artista_cadastro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:capitalize="sentences"
             android:inputType="textPersonName"
-            android:paddingBottom="16dp"
-            android:paddingRight="16dp" />
+            android:layout_marginTop="8dp" />
 
     </LinearLayout>
 
@@ -87,18 +85,15 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="Genero Musical"
-            android:paddingLeft="16dp"
-            android:paddingBottom="16dp"
+            android:layout_marginTop="8dp"
             android:textAlignment="textEnd"/>
 
         <EditText
             android:id="@+id/et_genero_cadastro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:capitalize="sentences"
             android:inputType="textPersonName"
-            android:paddingBottom="16dp"
-            android:paddingRight="16dp" />
+            android:layout_marginTop="8dp" />
 
     </LinearLayout>
 
@@ -112,18 +107,15 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="Local do evento"
-            android:paddingLeft="16dp"
-            android:paddingBottom="16dp"
+            android:layout_marginTop="8dp"
             android:textAlignment="textEnd"/>
 
         <EditText
             android:id="@+id/et_local_evento_cadastro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:capitalize="sentences"
             android:inputType="textPersonName"
-            android:paddingBottom="16dp"
-            android:paddingRight="16dp" />
+            android:layout_marginTop="8dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -135,18 +127,16 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="Data"
-            android:paddingLeft="16dp"
-            android:paddingBottom="16dp"
+            android:layout_marginTop="8dp"
             android:textAlignment="textEnd"/>
 
         <EditText
             android:id="@+id/et_data_evento_cadastro"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="dd/mm/aa"
             android:inputType="date"
-            android:paddingBottom="16dp"
-            android:paddingRight="16dp" />
+            android:layout_marginTop="8dp" />
 
 
     </LinearLayout>
@@ -160,18 +150,16 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="Hora"
-            android:paddingLeft="16dp"
-            android:paddingBottom="16dp"
+            android:layout_marginTop="8dp"
             android:textAlignment="textEnd"/>
 
         <EditText
             android:id="@+id/et_hora_evento_cadastro"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="hh:mm"
             android:inputType="time"
-            android:paddingBottom="16dp"
-            android:paddingRight="16dp" />
+            android:layout_marginTop="8dp" />
 
     </LinearLayout>
 
@@ -179,10 +167,8 @@
             android:id="@+id/bt_salvar_evento_cadastro"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="Salvar"
             android:layout_gravity="center"/>
-
-
-
-
 </LinearLayout>
+</ScrollView>
