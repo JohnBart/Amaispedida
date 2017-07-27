@@ -8,12 +8,14 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.amaispedida.R;
+import com.example.amaispedida.database.DBController;
 import com.example.amaispedida.database.DatabaseHelper;
 import com.example.amaispedida.domain.User;
 
 public class MusicoMainActivity extends AppCompatActivity {
 
-    DatabaseHelper database = new DatabaseHelper(this);
+    //DatabaseHelper database = new DatabaseHelper(this);
+    DBController database;
 
     private User user = new User();
 
@@ -26,6 +28,8 @@ public class MusicoMainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_musico_main);
+
+        database = new DBController(this);
 
         /*TextView eventos_cadastrados = (TextView) findViewById(R.id.numero_eventos_cadastrados);
         int nEventosCadastrados = database.countLinesFromTable("events");
@@ -42,6 +46,10 @@ public class MusicoMainActivity extends AppCompatActivity {
         bt_cadastrar_musica.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent i = new Intent(MusicoMainActivity.this, CadastroMusicaActivity.class);
+                i.putExtra("id",user.getId() );
+                i.putExtra("name", user.getName());
+                startActivity(i);
 
             }
         });
@@ -50,6 +58,11 @@ public class MusicoMainActivity extends AppCompatActivity {
         bt_consultar_musicas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent i = new Intent(MusicoMainActivity.this, MusicasActivity.class);
+                i.putExtra("id",user.getId() );
+                i.putExtra("name", user.getName());
+                startActivity(i);
+
 
             }
         });

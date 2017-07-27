@@ -9,17 +9,22 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.amaispedida.R;
+import com.example.amaispedida.database.DBController;
 import com.example.amaispedida.database.DatabaseHelper;
 import com.example.amaispedida.domain.Evento;
 
 public class CadastroEventoActivity extends AppCompatActivity {
 
-    DatabaseHelper database = new DatabaseHelper(this);
+    //DatabaseHelper database = new DatabaseHelper(this);
+    DBController database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_evento);
+
+        //Acesso ao banco de dados:
+        database = new DBController(this);
 
         Button bt_inserirImagemEvento = (Button) findViewById(R.id.button_insert_image);
         bt_inserirImagemEvento.setOnClickListener(new View.OnClickListener() {

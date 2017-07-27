@@ -9,6 +9,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.amaispedida.R;
+import com.example.amaispedida.database.DBController;
 import com.example.amaispedida.database.DatabaseHelper;
 import com.example.amaispedida.domain.User;
 
@@ -18,12 +19,15 @@ import com.example.amaispedida.domain.User;
 
 public class CadastroUserActivity extends AppCompatActivity {
 
-    DatabaseHelper database = new DatabaseHelper(this);
+    //DatabaseHelper database = new DatabaseHelper(this);
+    DBController database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_user);
+
+        database = new DBController(this);
 
         Button btsignup = (Button) findViewById(R.id.signup_button);
         btsignup.setOnClickListener(new View.OnClickListener() {
