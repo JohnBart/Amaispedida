@@ -47,9 +47,10 @@
             android:id="@+id/et_nome_evento_cadastro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:capitalize="sentences"
             android:inputType="textPersonName"
-            android:paddingRight="16dp"
-            android:paddingBottom="16dp"/>
+            android:paddingBottom="16dp"
+            android:paddingRight="16dp" />
 
     </LinearLayout>
 
@@ -70,9 +71,10 @@
             android:id="@+id/et_nome_artista_cadastro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:capitalize="sentences"
             android:inputType="textPersonName"
-            android:paddingRight="16dp"
-            android:paddingBottom="16dp"/>
+            android:paddingBottom="16dp"
+            android:paddingRight="16dp" />
 
     </LinearLayout>
 
@@ -93,9 +95,10 @@
             android:id="@+id/et_genero_cadastro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:capitalize="sentences"
             android:inputType="textPersonName"
-            android:paddingRight="16dp"
-            android:paddingBottom="16dp"/>
+            android:paddingBottom="16dp"
+            android:paddingRight="16dp" />
 
     </LinearLayout>
 
@@ -117,9 +120,10 @@
             android:id="@+id/et_local_evento_cadastro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:capitalize="sentences"
             android:inputType="textPersonName"
-            android:paddingRight="16dp"
-            android:paddingBottom="16dp"/>
+            android:paddingBottom="16dp"
+            android:paddingRight="16dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -140,8 +144,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="dd/mm/aa"
-            android:paddingRight="16dp"
-            android:paddingBottom="16dp"/>
+            android:inputType="date"
+            android:paddingBottom="16dp"
+            android:paddingRight="16dp" />
 
 
     </LinearLayout>
@@ -164,8 +169,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="hh:mm"
-            android:paddingRight="16dp"
-            android:paddingBottom="16dp"/>
+            android:inputType="time"
+            android:paddingBottom="16dp"
+            android:paddingRight="16dp" />
 
     </LinearLayout>
 
