@@ -190,6 +190,7 @@ public class DBController {
 
 
 
+    
     public int countLinesFromTable(String table){
         db = dbCreator.getReadableDatabase();
         Cursor cursor = db.rawQuery("select * from "+table, null);
