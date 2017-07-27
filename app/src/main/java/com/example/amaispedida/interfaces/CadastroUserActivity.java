@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 import com.example.amaispedida.R;
 import com.example.amaispedida.database.DBController;
-import com.example.amaispedida.database.DatabaseHelper;
 import com.example.amaispedida.domain.User;
 
 /**

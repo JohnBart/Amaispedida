@@ -1,6 +1,5 @@
 package com.example.amaispedida.interfaces;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,12 +9,10 @@ import android.widget.Toast;
 
 import com.example.amaispedida.R;
 import com.example.amaispedida.database.DBController;
-import com.example.amaispedida.database.DatabaseHelper;
 import com.example.amaispedida.domain.Evento;
 
 public class CadastroEventoActivity extends AppCompatActivity {
 
-    //DatabaseHelper database = new DatabaseHelper(this);
     DBController database;
 
     @Override
@@ -66,10 +63,15 @@ public class CadastroEventoActivity extends AppCompatActivity {
                     evento.setData(datast);
                     evento.setHora(horast);
 
-
-
                     database.insertEvento(evento, 1);
                     alert("Evento Salvo");
+                    nome_evento.setText(null);
+                    nome_artista.setText(null);
+                    genero_musical.setText(null);
+                    local.setText(null);
+                    data.setText(null);
+                    hora.setText(null);
+                    finish();
                 }
 
 
@@ -78,6 +80,6 @@ public class CadastroEventoActivity extends AppCompatActivity {
         });
     }
     public void alert(String str){
-        Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, str, Toast.LENGTH_LONG).show();
     }
 }

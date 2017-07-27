@@ -11,11 +11,9 @@ import android.widget.Toast;
 
 import com.example.amaispedida.R;
 import com.example.amaispedida.database.DBController;
-import com.example.amaispedida.database.DatabaseHelper;
 
 public class LoginActivity extends AppCompatActivity {
 
-    //DatabaseHelper database = new DatabaseHelper(this);
     private TextView tName;
     private TextView tLogin;
     private TextView tPassword;
@@ -47,6 +45,7 @@ public class LoginActivity extends AppCompatActivity {
             if (password.equals(passAux)) {
                 String profileAux = database.searchProfile(login);
                 long id = database.returnIdUser(login);
+
                 Intent intent;
                 if (profileAux.equals("espectador")) {
                     intent = new Intent(LoginActivity.this, EspectadorMainActivity.class);
@@ -55,6 +54,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 intent.putExtra("id", id);
                 startActivity(intent);
+                finish();
             } else {
                 alert("Login ou senha não conferem");
         }
